@@ -79,27 +79,21 @@ int main()
         results[LIST_NO][READ_NO][i] = read(l);
         results[SET_NO][READ_NO][i] = read(s);
 
+        // Perform the sort operation and store the result
+        results[VECTOR_NO][SORT_NO][i] = sort(v);
+        results[LIST_NO][SORT_NO][i] = sort(l);
+        results[SET_NO][SORT_NO][i] = sort(s);
+
         // Perform the insert operation and store the result
+        results[VECTOR_NO][INSERT_NO][i] = insert(v);
+        results[LIST_NO][INSERT_NO][i] = insert(l);
+        results[SET_NO][INSERT_NO][i] = insert(s);
+
+        // Perform the delete operation and store the result
+        results[VECTOR_NO][DELETE_NO][i] = deletion(v);
+        results[LIST_NO][DELETE_NO][i] = deletion(l);
+        results[SET_NO][DELETE_NO][i] = deletion(s);
     }
-    // Reading the data
-    vectorTimes[0] = read(v);
-    listTimes[0] = read(l);
-    setTimes[0] = read(s);
-
-    // Sort the data
-    vectorTimes[1] = sort(v);
-    listTimes[1] = sort(l);
-    setTimes[1] = sort(s);
-
-    // Insert the element into the middle
-    vectorTimes[2] = insert(v);
-    listTimes[2] = insert(l);
-    setTimes[2] = insert(s);
-
-    // Delete the middle element
-    vectorTimes[3] = deletion(v);
-    listTimes[3] = deletion(l);
-    setTimes[3] = deletion(s);
 
     // Display a header
     cout << setw(FIELD_SIZE) << right << "Operation";
