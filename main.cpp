@@ -120,7 +120,7 @@ int main()
     cout << endl;
 
     // Create a loop to display all the average results
-    for (int i = 0; i < OPERATIONS; i++)
+    for (int i = 0; i < OPERATIONS; i++)        // For each operations
     {
         // Display the operation
         if (i == 0)
@@ -145,7 +145,7 @@ int main()
         }
 
         // Display the race results
-        for (int j = 0; j < DATA_STRUCTURES; j++)
+        for (int j = 0; j < DATA_STRUCTURES; j++)        // For each data structures
         {
             // Display the time for each operation
             cout << setw(FIELD_SIZE) << right << sumResults[j][i] / 15;
