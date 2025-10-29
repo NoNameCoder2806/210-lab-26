@@ -24,6 +24,13 @@ const int DATA_STRUCTURES = 3;
 const int EXPERIMENTS = 15;
 const string INSERT_ELEMENT = "TESTCODE";
 const int FIELD_SIZE = 10;
+const int VECTOR_NO = 0;
+const int LIST_NO = 1;
+const int SET_NO = 2;
+const int READ_NO = 0;
+const int SORT_NO = 1;
+const int INSERT_NO = 2;
+const int DELETE_NO = 3;
 
 // Function prototypes
 long long read(vector<string>& v);
@@ -62,11 +69,17 @@ int main()
     // Create a loop to perform all the operations 15 times
     for (int i = 0; i < EXPERIMENTS; i++)
     {
-        // Create another loop to perform the operation for each of the data structures
-        for (int j = 0; j < OPERATIONS; j++)
-        {
-            results[]
-        }
+        // Clear all the data every time
+        v.clear();
+        l.clear();
+        s.clear();
+
+        // Perform the read operation and store the result
+        results[VECTOR_NO][READ_NO][i] = read(v);
+        results[LIST_NO][READ_NO][i] = read(l);
+        results[SET_NO][READ_NO][i] = read(s);
+
+        // Perform the insert operation and store the result
     }
     // Reading the data
     vectorTimes[0] = read(v);
