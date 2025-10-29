@@ -21,6 +21,7 @@ enum class type{VECTOR, LIST, SET};
 const string DATA_PATH = "codes.txt";
 const int OPERATIONS = 4;
 const int DATA_STRUCTURES = 3;
+const int EXPERIMENTS = 15;
 const string INSERT_ELEMENT = "TESTCODE";
 const int FIELD_SIZE = 10;
 
@@ -52,15 +53,21 @@ int main()
     list<string> l;
     set<string> s;
 
-    // Create arrays to store the time
-    long long vectorTimes[OPERATIONS];
-    long long listTimes[OPERATIONS];
-    long long setTimes[OPERATIONS];
+    // Create a 3D array to store the time
+    long long results[DATA_STRUCTURES][OPERATIONS][EXPERIMENTS];
+    // First layer: each data structures
+    // Second layer: the time for each operations
+    // Third layer: the time for each operation in each experiments
 
-    v.clear();
-    l.clear();
-    s.clear();
-
+    // Create a loop to perform all the operations 15 times
+    for (int i = 0; i < EXPERIMENTS; i++)
+    {
+        // Create another loop to perform the operation for each of the data structures
+        for (int j = 0; j < OPERATIONS; j++)
+        {
+            results[]
+        }
+    }
     // Reading the data
     vectorTimes[0] = read(v);
     listTimes[0] = read(l);
