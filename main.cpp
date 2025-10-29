@@ -66,6 +66,11 @@ int main()
     // Second layer: the time for each operations
     // Third layer: the time for each operation in each experiments
 
+    // Create a 2D array to store the sum
+    long long sumResults[DATA_STRUCTURES][OPERATIONS];
+    // First layer: each data structures
+    // Second layer: the sum of time for each operation
+
     // Create a loop to perform all the operations 15 times
     for (int i = 0; i < EXPERIMENTS; i++)
     {
@@ -93,6 +98,15 @@ int main()
         results[VECTOR_NO][DELETE_NO][i] = deletion(v);
         results[LIST_NO][DELETE_NO][i] = deletion(l);
         results[SET_NO][DELETE_NO][i] = deletion(s);
+
+        // Update the sum of the results
+        for (int j = 0; j < OPERATIONS; j++)                 // For each operations
+        {
+            for (int k = 0; k < DATA_STRUCTURES; k++)        // For each data structures
+            {
+                sumResults[k][j] += results[k][j][i];        // Update the sum
+            }
+        }
     }
 
     // Create a loop to print all the results 15 times
