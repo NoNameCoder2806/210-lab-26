@@ -61,13 +61,13 @@ int main()
     set<string> s;
 
     // Create a 3D array to store the time
-    long long results[DATA_STRUCTURES][OPERATIONS][SIMULATIONS];
+    long long results[DATA_STRUCTURES][OPERATIONS][SIMULATIONS] = {0};
     // First layer: each data structures
     // Second layer: the time for each operations
     // Third layer: the time for each operation in each experiments
 
     // Create a 2D array to store the sum
-    long long sumResults[DATA_STRUCTURES][OPERATIONS];
+    long long sumResults[DATA_STRUCTURES][OPERATIONS] = {0};
     // First layer: each data structures
     // Second layer: the sum of time for each operation
 
@@ -108,9 +108,6 @@ int main()
             }
         }
     }
-
-    // Display the number of simulations
-    cout << "Number of simulations: " << SIMULATIONS << endl;
 
     // Create a loop to print all the results 15 times
     for (int i = 0; i < SIMULATIONS; i++)
@@ -158,6 +155,52 @@ int main()
         }
 
         // Enter a new line
+        cout << endl;
+    }
+
+    // Display the number of simulations
+    cout << "Number of simulations: " << SIMULATIONS << endl;
+
+    // Display a header
+    cout << setw(FIELD_SIZE) << right << "Operation";
+    cout << setw(FIELD_SIZE) << right << "Vector";
+    cout << setw(FIELD_SIZE) << right << "List";
+    cout << setw(FIELD_SIZE) << right << "Set";
+    cout << endl;
+
+    // Create a loop to display all the average results
+    for (int i = 0; i < OPERATIONS; i++)
+    {
+        // Display the operation
+        if (i == 0)
+        {
+            // Read operation
+            cout << setw(FIELD_SIZE) << right << "Read";
+        }
+        else if (i == 1)
+        {
+            // Sort operation
+            cout << setw(FIELD_SIZE) << right << "Sort";
+        }
+        else if (i == 2)
+        {
+            // Insert operation
+            cout << setw(FIELD_SIZE) << right << "Insert";
+        }
+        else
+        {
+            // Delete operation
+            cout << setw(FIELD_SIZE) << right << "Delete";
+        }
+
+        // Display the race results
+        for (int j = 0; j < DATA_STRUCTURES; j++)
+        {
+            // Display the time for each operation
+            cout << setw(FIELD_SIZE) << right << sumResults[j][i] / 15;
+        }
+
+        // Enter a new line after each operation
         cout << endl;
     }
 
