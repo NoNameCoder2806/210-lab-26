@@ -21,7 +21,7 @@ enum class type{VECTOR, LIST, SET};
 const string DATA_PATH = "codes.txt";
 const int OPERATIONS = 4;
 const int DATA_STRUCTURES = 3;
-const int EXPERIMENTS = 15;
+const int SIMULATIONS = 15;
 const string INSERT_ELEMENT = "TESTCODE";
 const int FIELD_SIZE = 10;
 const int VECTOR_NO = 0;
@@ -61,7 +61,7 @@ int main()
     set<string> s;
 
     // Create a 3D array to store the time
-    long long results[DATA_STRUCTURES][OPERATIONS][EXPERIMENTS];
+    long long results[DATA_STRUCTURES][OPERATIONS][SIMULATIONS];
     // First layer: each data structures
     // Second layer: the time for each operations
     // Third layer: the time for each operation in each experiments
@@ -72,7 +72,7 @@ int main()
     // Second layer: the sum of time for each operation
 
     // Create a loop to perform all the operations 15 times
-    for (int i = 0; i < EXPERIMENTS; i++)
+    for (int i = 0; i < SIMULATIONS; i++)
     {
         // Clear all the data every time
         v.clear();
@@ -109,8 +109,11 @@ int main()
         }
     }
 
+    // Display the number of simulations
+    cout << "Number of simulations: " << SIMULATIONS << endl;
+
     // Create a loop to print all the results 15 times
-    for (int i = 0; i < EXPERIMENTS; i++)
+    for (int i = 0; i < SIMULATIONS; i++)
     {
         // Display the experiment number
         cout << "Experiment: #" << i + 1 << endl;
