@@ -109,55 +109,6 @@ int main()
         }
     }
 
-    // Create a loop to print all the results 15 times
-    for (int i = 0; i < SIMULATIONS; i++)
-    {
-        // Display the experiment number
-        cout << "Experiment: #" << i + 1 << endl;
-
-        // Display a header
-        cout << setw(FIELD_SIZE) << right << "Operation";
-        cout << setw(FIELD_SIZE) << right << "Vector";
-        cout << setw(FIELD_SIZE) << right << "List";
-        cout << setw(FIELD_SIZE) << right << "Set";
-        cout << endl;
-
-        // Display the race results
-        for (int j = 0; j < OPERATIONS; j++)
-        {
-            // Display the operation
-            if (j == 0)
-            {
-                // Read operation
-                cout << setw(FIELD_SIZE) << right << "Read";
-            }
-            else if (j == 1)
-            {
-                // Sort operation
-                cout << setw(FIELD_SIZE) << right << "Sort";
-            }
-            else if (j == 2)
-            {
-                // Insert operation
-                cout << setw(FIELD_SIZE) << right << "Insert";
-            }
-            else
-            {
-                // Delete operation
-                cout << setw(FIELD_SIZE) << right << "Delete";
-            }
-
-            // Display the time for each operation
-            cout << setw(FIELD_SIZE) << right << results[VECTOR_NO][j][i];
-            cout << setw(FIELD_SIZE) << right << results[LIST_NO][j][i];
-            cout << setw(FIELD_SIZE) << right << results[SET_NO][j][i];
-            cout << endl;
-        }
-
-        // Enter a new line
-        cout << endl;
-    }
-
     // Display the number of simulations
     cout << "Number of simulations: " << SIMULATIONS << endl;
 
